@@ -46,14 +46,10 @@ android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/house1"
-        android:layout_width="180dp"
-        android:layout_height="185dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
-        android:adjustViewBounds="false"
-        app:srcCompat="@drawable/house_image1"
-        tools:srcCompat="@drawable/house_image1"
-        tools:visibility="visible" />
+        android:layout_width="238dp"
+        android:layout_height="237dp"
+        android:src="@drawable/house_image1"
+        android:visibility="visible" />
 
     <TextView
         android:id="@+id/textView6"
@@ -96,6 +92,7 @@ android:layout_height="match_parent">
         android:text="Mortgage"
         android:textColor="#FFFFFF"
         android:onClick="openMain2"/>
+
 </LinearLayout>
 
 
