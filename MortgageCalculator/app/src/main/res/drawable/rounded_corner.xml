@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Define the stroke properties -->
+    <stroke android:width="1dip" android:color="@color/black"/>
+
+    <!-- Define the solid (background) color -->
+    <solid android:color="#E6E0E9"/>
+</shape>

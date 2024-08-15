@@ -1,6 +1,9 @@
 package com.example.mortgagecalculator
 
 import android.os.Bundle
+import android.util.Log
+import android.widget.Button
+import android.widget.EditText
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -16,34 +19,24 @@ import com.example.mortgagecalculator.ui.theme.MortgageCalculatorTheme
 
 
 class MainActivity : ComponentActivity() {
+
+    lateinit var usernameInput : EditText
+    lateinit var passwordInput : EditText
+    lateinit var loginBtn : Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            MortgageCalculatorTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+        setContentView(R.layout.activity_main)
+
+        usernameInput = findViewById(R.id.username_input)
+        passwordInput = findViewById(R.id.password_input)
+        loginBtn = findViewById(R.id.login_btn)
+
+        loginBtn.setOnClickListener {
+            val username = usernameInput.text.toString()
+            val password = passwordInput.text.toString()
+            Log.i("Test Credentials", "Username: $username and Password $password")
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MortgageCalculatorTheme {
-        Greeting("Android")
-    }
-}
