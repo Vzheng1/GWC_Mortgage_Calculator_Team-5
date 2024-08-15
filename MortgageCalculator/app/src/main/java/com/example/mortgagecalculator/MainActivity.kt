@@ -1,37 +1,50 @@
 package com.example.mortgagecalculator
 
+import android.app.ActivityOptions
+import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.mortgagecalculator.ui.theme.MortgageCalculatorTheme
-
+import androidx.annotation.RequiresApi
 
 
 class MainActivity : ComponentActivity() {
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            MortgageCalculatorTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+        setContentView(R.layout.activity_main)
+
+        //define UI elements
+        val emailEditText = findViewById<EditText>(R.id.email_edit_text)
+        val passwordEditText = findViewById<EditText>(R.id.password_edit_text)
+        val loginButton = findViewById<Button>(R.id.login_button)
+
+        //steps when button is clicked
+        loginButton.setOnClickListener {
+            val email = emailEditText.text.toString()
+            val password = passwordEditText.text.toString()
+
+            // Sample credentials for demo purposes
+            val demoEmail = "user@example.com"
+            val demoPassword = "password123"
+
+            //check if email and password are correct
+            if (email == demoEmail && password == demoPassword) {
+                // Navigate to the new activity if login is successful
+                val intent = Intent(this, HousesActivity::class.java)
+                startActivity(intent)
+                finish()
+            } else {
+                Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show()
             }
         }
     }
 }
 
+/**
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
@@ -47,3 +60,4 @@ fun GreetingPreview() {
         Greeting("Android")
     }
 }
+        */
