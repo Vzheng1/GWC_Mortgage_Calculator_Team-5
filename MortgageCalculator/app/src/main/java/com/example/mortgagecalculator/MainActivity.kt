@@ -27,25 +27,4 @@ class MainActivity : ComponentActivity() {
         setContentView(R.layout.activity_main)
 
 
-
-
-        // Get the spinner from the xml layout
-        val dropdown = findViewById<Spinner>(R.id.spinner)
-
-
-        // Create a list of items for the spinner
-        val items = arrayOf("1", "2", "3", "4", "5", "6", "7")
-
-
-        // Create an adapter for the spinner
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, items)
-
-
-        // Set the adapter for the spinner
-        dropdown.adapter = adapter
-
-
-    }
-
-
 }
