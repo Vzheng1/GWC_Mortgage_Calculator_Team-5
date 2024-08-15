@@ -1,21 +1,12 @@
 package com.example.mortgagecalculator
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.mortgagecalculator.ui.theme.MortgageCalculatorTheme
-
 
 
 class MainActivity : ComponentActivity() {
@@ -36,7 +27,13 @@ class MainActivity : ComponentActivity() {
             val username = usernameInput.text.toString()
             val password = passwordInput.text.toString()
             Log.i("Test Credentials", "Username: $username and Password $password")
+
+            val intent = Intent(this, MainActivity2::class.java)
+            startActivity(intent)
         }
     }
+
+
+
 }
 

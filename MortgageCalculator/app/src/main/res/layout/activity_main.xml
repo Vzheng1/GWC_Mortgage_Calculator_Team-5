@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:gravity="center"
     android:padding="16dp"
+    android:background="@drawable/loginbackground"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -66,6 +67,11 @@
             android:focusable="true"
             android:textStyle="bold"
             android:padding="4dp"/>
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't have an account? Register here." />
 
         <Button
             android:layout_width="match_parent"
@@ -77,7 +83,8 @@
             android:padding="18dp"
             android:layout_marginTop="32dp"
             android:textSize="20sp"
-            android:id="@+id/login_btn"/>
+            android:id="@+id/login_btn"
+            android:onClick="openMain2"/>
 
 
 
