@@ -32,6 +32,12 @@
             android:label="@string/app_name"
             android:theme="@style/Theme.MortgageCalculator" />
 
+        <activity
+            android:name=".ui.theme.MortgageActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.MortgageCalculator" />
+
     </application>
 
 </manifest>
