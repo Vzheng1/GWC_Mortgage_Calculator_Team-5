@@ -1,6 +1,9 @@
 package com.example.mortgagecalculator
 
+
 import android.os.Bundle
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -15,35 +18,34 @@ import com.example.mortgagecalculator.ui.theme.MortgageCalculatorTheme
 
 
 
+
+
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            MortgageCalculatorTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
-        }
-    }
-}
+        setContentView(R.layout.activity_main)
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MortgageCalculatorTheme {
-        Greeting("Android")
+
+
+        // Get the spinner from the xml layout
+        val dropdown = findViewById<Spinner>(R.id.spinner)
+
+
+        // Create a list of items for the spinner
+        val items = arrayOf("1", "2", "3", "4", "5", "6", "7")
+
+
+        // Create an adapter for the spinner
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, items)
+
+
+        // Set the adapter for the spinner
+        dropdown.adapter = adapter
+
+
     }
+
+
 }
